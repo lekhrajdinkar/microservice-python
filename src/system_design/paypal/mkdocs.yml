@@ -1,0 +1,99 @@
+site_name: PayPal Clone - Payment System Documentation
+site_description: Comprehensive documentation for PayPal-like payment system with microservices architecture
+site_author: Development Team
+
+# Repository
+repo_name: paypal-clone
+repo_url: https://github.com/your-org/paypal-clone
+
+# Configuration
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+# Navigation
+nav:
+  - Home: index.md
+  - Project Requirements:
+    - claude_code: claude_code.md
+    - PRD Overview: PaymentSystem_PRD.md
+    - Architecture: architecture/overview.md
+    - Microservices: architecture/microservices.md
+    - websocket integration: websocket_integration.md
+  - System Design:
+    - Database Design: design/database.md
+    - cache Design: design/cache.md
+    - API Specifications: design/api.md
+    - Communication Patterns: design/communication.md
+    - Security: design/security.md
+    - reliable system: design/reliable.md
+    - Scalable system: design/Scalable.md
+  - Observability:
+    - Monitoring Strategy: observability/monitoring.md
+    - DataDog Integration: observability/datadog.md
+    - Logging: observability/logging.md
+    - Distributed Tracing: observability/Tracing.md
+    - metric : observability/metric.md
+  - Deployment:
+    - Minikube Setup: deployment/minikube.md
+    - AWS EKS: deployment/eks.md
+    - CI/CD Pipeline: deployment/cicd.md
+  - Development:
+    - Getting Started: development/setup.md
+    - Coding Standards: development/standards.md
+    - Testing Strategy: development/testing.md
+
+# Extensions
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+# Plugins
+plugins:
+  - search
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-org/paypal-clone
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/your-org/paypal-clone
+
+# Copyright
+copyright: Copyright &copy; 2024 PayPal Clone Project
