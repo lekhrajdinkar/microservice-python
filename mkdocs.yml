@@ -1,0 +1,71 @@
+site_name: Python | Microservices | 2025
+site_description: Python | Microservices 2025
+site_author: Lekhraj Dinkar
+docs_dir: docs
+
+nav:
+  - Python:
+      - kickoff: 02_funda/01_kickoff.md
+      - lang_funda: 02_funda/00_py-funda.md
+      - global-function: 02_funda/02_global-function.md
+      - modules: 02_funda/03_module+DP.md
+      - OOPS: 02_funda/04_programing-style.md
+      - useful_function: 02_funda/05_useful_function.md
+      - More 🗨️: chats.md
+
+  - Web : 03_web/index.md
+
+theme:
+  name: material
+  features:
+    - navigation.tracking          # Enables breadcrumbs
+    - navigation.tabs              # Optional: if using tabs layout
+    - navigation.top               # Scroll-to-top button
+    - navigation.sections
+    #- navigation.expand
+    - navigation.indexes
+    - navigation.footer            # Enables next/previous at bottom
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: pink
+  custom_dir: .
+
+extra_css:
+  - mkdocs.css
+
+repo_url: https://github.com/lekhrajdinkar/microservice-python
+repo_name: GitHub
+edit_uri: edit/main/Notes/
+
+# Extensions
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lekhrajdinkar
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/lekhraj-dinkar-25872140/
