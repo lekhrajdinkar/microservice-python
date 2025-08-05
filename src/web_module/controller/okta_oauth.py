@@ -1,9 +1,9 @@
 import httpx, base64
 from fastapi import HTTPException
-from src.commonModule.init_srv import load_env_config
-import os
 
+import os
 from dotenv import load_dotenv
+from src.web_module.service.init_srv import load_env_config
 load_dotenv()
 app_config = load_env_config()['oauth']['okta']
 
@@ -12,7 +12,6 @@ OKTA_CLIENT_ID=app_config['OKTA_CLIENT_ID']
 OKTA_TOKEN_URL=app_config['OKTA_TOKEN_URL']
 OKTA_INTROSPECT_URL=app_config['OKTA_INTROSPECT_URL']
 OKTA_SCOPE=app_config['OKTA_SCOPE']
-
 
 # not in use
 async def get_okta_token_async():
