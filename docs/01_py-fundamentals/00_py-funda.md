@@ -14,7 +14,7 @@
 - **ternary** : a if condition else b
 
 ### 1. datatype
-- ![img_2.png](99_IMG/001/img_2.png)
+- ![img_2.png](../99_IMG/001/img_2.png)
 - inbuilt class, lower case unlike java, use module for more types.
 - **type, class, Enum, module**
 - range, int, float, complex(imaginary number), **decimal**.Decimal

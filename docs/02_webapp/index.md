@@ -130,7 +130,7 @@ Deploy to AWS (ECS/EKS, API Gateway, Lambda)
 ### 3.3. caching :: redis
 - key => (e.g., appname:env:item:{item_id}
 
-![img.png](../02_funda/99_IMG/002/img2.png)
+![img.png](../99_IMG/002/img2.png)
 
 ### 3.4. Rate limiting (app level)
 - pip install `fastapi-limiter`  `redis`  `redis[asyncio]`
@@ -145,6 +145,6 @@ Download
   "detail": "Too Many Requests"
 }
 ```
-![img.png](../02_funda/99_IMG/002/img.png)
+![img.png](../99_IMG/002/img.png)
 
 

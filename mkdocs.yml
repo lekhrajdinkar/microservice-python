@@ -5,15 +5,16 @@ docs_dir: docs
 
 nav:
   - Python:
-      - kickoff: 02_funda/01_kickoff.md
-      - lang_funda: 02_funda/00_py-funda.md
-      - global-function: 02_funda/02_global-function.md
-      - modules: 02_funda/03_module+DP.md
-      - OOPS: 02_funda/04_programing-style.md
-      - useful_function: 02_funda/05_useful_function.md
-      - More 🗨️: chats.md
+      - kickoff: 01_py-fundamentals/01_kickoff.md
+      - fundamentals: 01_py-fundamentals/00_py-funda.md
+      - global-function: 01_py-fundamentals/02_global-function.md
+      - modules: 01_py-fundamentals/03_module+DP.md
+      - OOPS: 01_py-fundamentals/04_programing-style.md
+      - useful function: 01_py-fundamentals/05_useful_function.md
+      - references 🗨️: 99_references.md
 
-  - Web : 03_web/index.md
+  - WebApp:
+      - index: 02_webapp/index.md
 
 theme:
   name: material
