@@ -1,5 +1,5 @@
-site_name: Python | Microservices | 2025
-site_description: Python | Microservices 2025
+site_name: Python | Microservices | Leetcode | 2025
+site_description: Python | Microservices | Leetcode | 2025
 site_author: Lekhraj Dinkar
 docs_dir: docs
 
@@ -15,6 +15,14 @@ nav:
 
   - WebApp:
       - index: 02_webapp/index.md
+
+  - leetcode:
+      - DS and algo:
+        - start: 03_leetcode/ds+algo/00_ds+algo-start.md
+        - 01 sliding_window: 03_leetcode/01_sliding_window.md
+      - tips:
+          - py_tips: 03_leetcode/tips/01_01_py_tips.md
+          - postgres_tips: 03_leetcode/tips/02_01_postgres_tips.md
 
 theme:
   name: material

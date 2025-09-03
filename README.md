@@ -1,6 +1,7 @@
 ## Notes
 - [01_py-fundamentals](docs/01_py-fundamentals)
 - [02_webapp](docs/02_webapp)
+- [03_leetcode](docs/03_leetcode)
 
 ---
 ## programs
