@@ -1,8 +1,11 @@
+# WebApp1
+
+## Overview
 - https://fastapi.tiangolo.com/tutorial/
 - Content-Disposition: inline/attachment
 - `aiohttp`, `request` are commonly used as an asynchronous HTTP client
 
-## 1. Django vs flask vs fastapi
+**Django vs flask vs fastapi**
 
 | Feature            | **Django**                                  | **FastAPI**                                    |
 | ------------------ | ------------------------------------------- | ---------------------------------------------- |
@@ -16,10 +19,10 @@
 | **Community**      | Large, mature                               | Growing fast                                   |
 | **Best For**       | Traditional web apps, CMS, admin-heavy apps | High-performance APIs, modern backend services |
 
-## 2. sync API 
+**Async API**
 - **uvicorn src.webModule.controller.web2:app --reload**
 - refers to an asynchronous, non-blocking API
-- one that can handle multiple requests **concurrently** 
+- one that can handle multiple requests **concurrently**
 - without waiting for each request to complete before starting the next.
 - eg: FastAPI is built on async I/O, powered by `Python’s async/await` ⬅️
 
@@ -32,13 +35,18 @@ async def read_data():
 - FastAPI can continue serving other requests while waiting for other to finish
 - Also, frontend itself is written to handle asynchronous calls properly, with promise, observable 😁
 
-## 3. POC
-### 3.1. objective/s
+---
+## Environment Setup
+- [docker-compose-postgres.yml](docker-compose-postgres.yml)
+- [requirements.txt](../../requirements.txt) | [pyproject.toml](../../pyproject.toml)
+
+---
+## POC Task/s
 - security: `fastapi.security`, `PyJWT`
-    - with OAuth + jwt 
+    - with OAuth + jwt
     - API Key authentication
 - API - documentation,
-- API version 
+- API version
 - handling different type on http request with header, body , path param, request param
 - API cache static cache at app level : **redis and in-memory**
 - Custom response codes & headers
@@ -68,8 +76,7 @@ async def read_data():
 | File download with progress             | ✅ Stream response with chunked transfer encoding `StreamingResponse` from Starlette  |
 | Data validation                         | ✅ `Pydantic`                                                                         |
 
-### 3.2. POC Steps
-- 👉🏻 program::[web2.py](../../src/webModule/controller/web2.py)
+
 ```
 Step 1: Host Simple API
 🔸 Create root endpoint / returning a welcome message.
@@ -127,12 +134,8 @@ Dockerize the project
 Deploy to AWS (ECS/EKS, API Gateway, Lambda)
 ```
 
-### 3.3. caching :: redis
-- key => (e.g., appname:env:item:{item_id}
 
-![img.png](../99_IMG/002/img2.png)
-
-### 3.4. Rate limiting (app level)
+### Step-6. Rate limiting (app level)
 - pip install `fastapi-limiter`  `redis`  `redis[asyncio]`
 - FastAPILimiter.init(redis_client)
 
@@ -145,6 +148,12 @@ Download
   "detail": "Too Many Requests"
 }
 ```
-![img.png](../99_IMG/002/img.png)
+![img.png](../../docs/99_IMG/002/img.png)
+
+
+### Step-7 caching :: redis
+- key => (e.g., appname:env:item:{item_id}
+
+![img.png](../../docs/99_IMG/002/img2.png)
 
 

@@ -10,11 +10,11 @@
     - with **open**(file1, "r"):
     - special methods : `__start__ , __end__`
 - **global** / **nonlocal** : keyword used inside a function to declare that a variable refers to the global (module-level) variable, allowing you to modify it.
-    - [glocal+nonlocal.py](../../src/pyBasicModule/year2025/others/glocal%2Bnonlocal.py)
+    - [glocal+nonlocal.py](../../../src/pyBasicModule/year2025/others/glocal+nonlocal.py)
 - **ternary** : a if condition else b
 
 ### 1. datatype
-- ![img_2.png](../99_IMG/001/img_2.png)
+- ![img_2.png](../../99_IMG/001/img_2.png)
 - inbuilt class, lower case unlike java, use module for more types.
 - **type, class, Enum, module**
 - range, int, float, complex(imaginary number), **decimal**.Decimal
@@ -47,7 +47,7 @@
         - type hinted in 3.9+ 
         - Optional with type hints 
     - **Ellipsis** 
-        - print(type(...)) # < class 'ellipsis' > [ellipsis1.py](../../src/pyBasicModule/year2025/datatype/ellipsis1.py)
+        - print(type(...)) # < class 'ellipsis' > [ellipsis1.py](../../../src/pyBasicModule/year2025/datatype/ellipsis1.py)
         - so in short, its just special constant value ... 
         - and it developer creativity to write custom logic around it
         - used in NumPy , fastApi
@@ -276,7 +276,7 @@ if __name__ == "__main__":
     - **function** yields value/s ⬅️ type:
         - sync (for )
         - async (async for)
-    - [yeild+generator.py : section-4](../../src/pyBasicModule/year2025/others/yeild+generator.py)
+    - [yeild+generator.py : section-4](../../../src/pyBasicModule/year2025/others/yeild+generator.py)
     - **generator expression** ((x*x for x in range(5)))
 
 | Feature        | `return`                  | `yield`                       |
@@ -290,7 +290,7 @@ if __name__ == "__main__":
 - generator vs iterator ⬅️
 - All generators are iterators, not vice versa.
 - both Returns New Collections ⬅️
-- eg: [list_and_iterable1.py](../../src/pyBasicModule/year2025/datatype/list_and_iterable1.py)
+- eg: [list_and_iterable1.py](../../../src/pyBasicModule/year2025/datatype/list_and_iterable1.py)
 - **Comprehensions**. [v] {v}, {kv}
     - even_set_squares = [x*x for x in range(10) if x % 2 == 0] # **List** comprehension
     - even_set = {x for x in range(10) if x % 2 == 0} # **set** comprehension
@@ -332,8 +332,8 @@ if __name__ == "__main__":
     - l = map(func, iterable)
     - l = filter(func, iterable) – Filter items matching condition
     - sum | all | any([...]) --> for numeric
-- custom class (wrapped list) with __iter__() and __next__() for iterable objects : [dunder1.py](../../src/pyBasicModule/year2025/others/dunder1.py)
-- **shelve** [shelve1.py](../../src/pyBasicModule/year2021/modules/shelve1.py) === like dict [str|any] ⬅️
+- custom class (wrapped list) with __iter__() and __next__() for iterable objects : [dunder1.py](../../../src/pyBasicModule/year2025/others/dunder1.py)
+- **shelve** [shelve1.py](../../../src/pyBasicModule/year2021/modules/shelve1.py) === like dict [str|any] ⬅️
 - [1,2,3] * 2
 - [0] * 2
 - [[0] * 2] * 2    #2d Array
@@ -345,7 +345,7 @@ if __name__ == "__main__":
 - Mutability or performance comparison
 
 ### Topic-5 :: deepcopy
-- [copy1.py](../../src/pyBasicModule/year2025/others/copy1.py)
+- [copy1.py](../../../src/pyBasicModule/year2025/others/copy1.py)
 - time --> time.struct_time --> named tuple
 
 ### Topic-6 :: memory mgt
@@ -372,7 +372,7 @@ if __name__ == "__main__":
 
 ### Topic-6 :: Threads
 - **GIL** global interpreter lock
-- import threading + [thread1.py](../../src/pyBasicModule/year2025/others/thread1.py)
+- import threading + [thread1.py](../../../src/pyBasicModule/year2025/others/thread1.py)
 
 ### Topic-7 :: Async
 - library : asyncio (has **eventloop**)

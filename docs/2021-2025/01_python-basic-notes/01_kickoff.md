@@ -39,7 +39,7 @@ sudo yum install python3
     - script itself can be a self executable in Linux, like a shell script
     - run directly: ./prog-1.py
   
-- ![img.png](../99_IMG/001/img.png)
+- ![img.png](../../99_IMG/001/img.png)
 
 ---
 ## 4 py::venv
@@ -47,7 +47,7 @@ sudo yum install python3
 - need isolated environments of Python, for diff appl.
 - **python3 -m venv myvenv**
 - myvenv\scripts\**activate**
-- ![img_1.png](../99_IMG/001/img_1.png)
+- ![img_1.png](../../99_IMG/001/img_1.png)
 
 ## 5. py::reserved keyword
 ```

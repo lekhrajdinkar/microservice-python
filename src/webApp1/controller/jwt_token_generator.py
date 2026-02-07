@@ -2,7 +2,7 @@ from fastapi import Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
-from src.web_module.controller.web2 import app
+from src.webApp1.controller.web2 import app
 
 # Secret key and algorithm for JWT (in real apps, load from env)
 SECRET_KEY = "secret123"

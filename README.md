@@ -1,11 +1,9 @@
-## Notes
-- [01_py-fundamentals](docs/01_py-fundamentals)
-- [02_webapp](docs/02_webapp)
-- [03_leetcode](docs/03_leetcode)
+# Python
+## 2021-2025
+- [Leetcode](src/leetcode)
+- [python BasicModule](src/pyBasicModule) | [notes](docs/2021-2025/01_python-basic-notes)
+- [system_design - payPal (AI assisuted code v1)](src/systemDesign)
+- [webApp1](src/webApp1)
 
 ---
-## programs
-- [leetcode](src/leetcode)
-- [pyBasicModule](src/pyBasicModule)
-- [system_design](src/system_design)
-- [web_module](src/web_module)
+## 2026

@@ -3,7 +3,7 @@ from fastapi import HTTPException
 
 import os
 from dotenv import load_dotenv
-from src.web_module.service.init_srv import load_env_config
+from src.webApp1.service.init_srv import load_env_config
 load_dotenv()
 app_config = load_env_config()['oauth']['okta']
 

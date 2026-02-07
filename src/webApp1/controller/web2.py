@@ -4,7 +4,7 @@
 from fastapi import FastAPI, Header, Query, Path, Body, Request, Depends, HTTPException
 from typing import Optional
 from src.commonModule.init_srv import load_env_config
-from src.web_module.controller.okta_oauth import verify_okta_token, request_token
+from src.webApp1.controller.okta_oauth import verify_okta_token, request_token
 from fastapi import FastAPI, Request, Depends
 from fastapi.responses import JSONResponse
 from fastapi_limiter import FastAPILimiter
