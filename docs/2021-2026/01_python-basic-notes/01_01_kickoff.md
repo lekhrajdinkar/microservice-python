@@ -1,4 +1,15 @@
 # python 3.x (since 2008)
+## Reference
+- https://chatgpt.com/c/68536dbf-dd20-800d-9328-f38fcbdef71e | fundamentals-1
+- https://chatgpt.com/c/6856fc5b-1158-800d-8222-c209716ac1e3 | fundamentals-2
+- https://chatgpt.com/c/6854510f-b2d4-800d-afd2-c1a3dba598ec | Question list 1
+- https://chatgpt.com/c/685647fe-4340-800d-bfe6-adb6a3f60d42 | m1:collections,etc
+- https://chatgpt.com/c/68535fab-0494-800d-af09-a35817d88f6a | m2:file,json,os,pathlib,etc
+- https://chatgpt.com/c/6860073b-f944-800d-840d-293a4e339ddc | py more lib :: explanation
+- https://chatgpt.com/c/68535fab-0494-800d-af09-a35817d88f6a | web1
+- https://chatgpt.com/c/68591a85-d678-800d-9f7f-ec93a102eb9a | web2 (microservices)
+
+---
 ## 1 py::Intro
 - **high-level**
 - open-source and cross-platform programming language
@@ -63,3 +74,7 @@ or	pass	raise
 return	True	try
 while	with	yield
 ```
+
+---
+- python -m timeit -s "lst = list(range(1000))" "sum(lst)"
+- python -m cProfile your_script.py

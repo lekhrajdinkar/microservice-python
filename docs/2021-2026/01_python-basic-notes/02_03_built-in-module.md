@@ -33,8 +33,4 @@
 | Performance          | `cython`, `numba`, `joblib`                         | Speed up code with C extensions or parallelism |
 | Logging & Monitoring | `loguru`, `structlog`, `sentry-sdk`                 | Structured logging and error monitoring        |
 
----
-## B. Design patterns 🅿️ 
-### 1. profile / performance
-- python -m timeit -s "lst = list(range(1000))" "sum(lst)"
-- python -m cProfile your_script.py
+

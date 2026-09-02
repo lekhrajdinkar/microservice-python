@@ -1,7 +1,9 @@
-- fact: ⬅️
-    - `int("42")` === `int.__new__(int, "42")` // int is class (right side one)
-    - int() is a built-in function,
-    -  It internally calls the constructor of the int class.
+# Global Functions / Builtins
+
+**Fact**
+- `int("42")` === `int.__new__(int, "42")` // int is class (right side one)
+- int() is a built-in function,
+-  It internally calls the constructor of the int class.
 
 ---  
 ## 1. Type Conversion & Type Checking
