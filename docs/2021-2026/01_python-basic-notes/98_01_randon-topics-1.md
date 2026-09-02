@@ -1,63 +1,107 @@
 # Randon Topic
-##  Topic1 : yield,kwarg,arg,etc
+## kwarg | arg
 - `*args` → captures extra positional arguments as a **tuple**
 - `**kwargs` → captures extra keyword arguments as a **dict**
-- `__name__`
-- special built-in variable in every Python file (module-1.py)
-- `__main__`: if module ran directly
-- `module-1` : if module ran by being imported
--  `yield` | [yeild+generator.py](../../src/pyBasicModule/year2025/style_functional/yeild%2Bgenerator.py)
-- f1_var = definition of f1(); next(f1_var)  //functional programing
-- yield returns a value without exiting the function.
-- function’s state is saved between calls.
-- produces a **generator object**.
-- yield helps a function stream multiple return values one at a time, instead of returning them all at once. ⬅️
-- generator === function with yield ( stream of mulTopicle return)
-- return and pause,
-- use next(f),
-- so Streams one value at a time
-- Use Case : want to stream data (e.g. files, DB rows) + work with large/infinite datasets + need lazy evaluation.
-- `yield from`  - Delegating to another generator (sync)
-- def generator1: yield from range(3); yield("done);
-- `generator`
-- **function** yields value/s ⬅️ type:
-- sync (for )
-- async (async for)
-- [yeild+generator.py : section-4](../../../src/pyBasicModule/year2025/others/yeild+generator.py)
-- **generator expression** ((x*x for x in range(5)))
 
-| Feature        | `return`                  | `yield`                       |
-| -------------- | ------------------------- | ----------------------------- |
+---
+## __ name __
+- `__name__`: special built-in variable in every Python file (`module-1`.py)
+  - `__main__`: if module ran directly
+  - `module-1` : if module ran by being imported
+
+---
+## Generator
+**generator** 
+- is a function containing `yield`
+- produces a sequence of values over time using yield keyword
+- one value at a time, return and pause
+- All generators are **iterators**, not vice versa. both Returns New Collections 👈
+
+Use Case
+- want to stream data (e.g. files, DB rows)
+- work with large/infinite datasets
+- **need lazy evaluation.**
+
+```python
+def f1():
+    yield 10
+    yield 20
+    yield 30
+```
+
+```blueprint
+f1() ──→ generator
+          │
+          ├─ next() → 10
+          ├─ next() → 20
+          ├─ next() → 30
+          └─ next() → StopIteration
+
+or, loop over generator
+```
+---
+`yield` keyword
+- yield returns a value without exiting the function.
+- the function’s run state is saved between calls.
+- It produces a **generator** object.
+> **yield** helps a function stream multiple return values one at a time, instead of returning them all at once.
+
+|         | **return** ,   vs         | **yield**  (stream)           |
+| -------------- |---------------------------|-------------------------------|
 | Ends function? | Yes                       | No (pauses and resumes)       |
 | Use case       | One result only           | Sequence of results over time |
 | Memory         | Stores all values at once | Streams one value at a time   |
 
+@[code:7-22](../../../src/pyBasicModule/year2025/others/yeild-and-generator.py)
+
 ---
-##  Topic-2 : generator-Expression + Comprehension
-- concise ways to create **new** collections like lists, sets, or dictionaries
-- generator vs iterator ⬅️
-- All generators are iterators, not vice versa.
-- both Returns New Collections ⬅️
-- eg: [list_and_iterable1.py](../../../src/pyBasicModule/year2025/datatype/list_and_iterable1.py)
-- **Comprehensions**. [v] {v}, {kv}
-- even_set_squares = [x*x for x in range(10) if x % 2 == 0] # **List** comprehension
-- even_set = {x for x in range(10) if x % 2 == 0} # **set** comprehension
-- squares = {x: x * x for x in range(5)}  # **dict** comprehension
-- Eager Evaluation: Evaluates all items immediately.
-- Stores all values in memory as a full list.
-- **generator expression** ()
-- like a list comprehension but produces items one at a time using lazy evaluation
+`yield from`  
+- Delegating to another generator (sync)
+
+```python
+def inner():
+    yield 1
+    yield 2
+    yield 3
+
+# With yield from:
+def outer():
+    yield from inner()
+    
+# Without yield from:
+def outer():
+    for x in inner():
+        yield x
+```
+@[code:33-42](../../../src/pyBasicModule/year2025/others/yeild-and-generator.py)
+
+
+---
+`async for` for "Async generator"
+@[code:44-56](../../../src/pyBasicModule/year2025/others/yeild-and-generator.py)
+
+---
+## Generator Expression ⭐
+- like a **list comprehension**, but produces items one at a time, **using lazy evaluation**
 - saves memory, consume less, and is faster for large data
 - syntax: **(expression for item in iterable if condition)**
-- (x*x for x in range(10) if x % 2 == 0)
+- eg: 
+  - `(x*x for x in range(5))`
+  - `(x*x for x in range(10) if x % 2 == 0)`
 
-| Use Case                | Generator | List |
-| ----------------------- | --------- | ---- |
-| Large datasets          | ✅         | ❌    |
-| One-time iteration      | ✅         | ❌    |
-| Need all values at once | ❌         | ✅    |
-| Memory critical apps    | ✅         | ❌    |
+---
+## Comprehension ⭐
+> Syntax: 
+> - Comprehension :        [x] , {x}, {x:v}, 
+> - Generator Expression : (x)
 
+- concise ways to create **new** collections like lists, sets, or dictionaries
+- **Eager Evaluation**: Evaluates all items immediately.
+- Stores all values in memory as a full list.
+- example 
+  - `even_set_squares = [x*x for x in range(10) if x % 2 == 0] ` **List** comprehension
+  - `even_set = {x for x in range(10) if x % 2 == 0}`  **set** comprehension
+  - `squares = {x: x * x for x in range(5)}`   **dict** comprehension
 
 | Feature                  | Java Stream API                     | Python Equivalent                          |
 | ------------------------ | ----------------------------------- | ------------------------------------------ |
@@ -68,8 +112,10 @@
 | **Parallel processing**  | `.parallelStream()`                 | Use multiprocessing/threading manually     |
 | **Chaining operations**  | `stream().filter().map().collect()` | Use nested comprehensions or `map/filter`  |
 
+@[code:1-10](../../../src/pyBasicModule/year2025/datatype/list_and_iterable1.py)
+
 ---
-##  Topic3 : collection
+## collection
 - generator, Iteration/Streams vs Comprehensions
 - negative and nested indexing
 - can omit () in tuple
@@ -89,17 +135,17 @@
 - priority-Queue : heapq ⬅️
 
 ---
-##  Topic-4 :: decorator ❓
+## decorator ❓
 - decorator
 - Mutability or performance comparison
 
 ---
-##  Topic-5 :: deepcopy
+##  deepcopy
 - [copy1.py](../../../src/pyBasicModule/year2025/others/copy1.py)
 - time --> time.struct_time --> named tuple
 
 ---
-##  Topic-6 :: memory mgt
+## memory mgt
 - automatic and built-in,
 - reference count goes to 0, obj deleted
 - private heap for all object allocations.
@@ -122,12 +168,12 @@
 | Check identity | `is`   | `==`        |
 
 ---
-##  Topic-6 :: Threads
+## Threads
 - **GIL** global interpreter lock
 - import threading + [thread1.py](../../../src/pyBasicModule/year2025/others/thread1.py)
 
 ---
-##  Topic-7 :: Async
+## Async
 - library : asyncio (has **eventloop**)
 - async with - `( __aenter__() , __aexit__() )` ⬅️
 - with - `( __enter__() , __exit__() )`
@@ -185,7 +231,7 @@ Repeats until all tasks are done.
 | `asyncio.gather()`       | Run multiple coroutines concurrently     |
 
 ---
-##  topic 8 :: functional
+## functional
 
 | Type                          | Description          | Example         |
 | ----------------------------- | -------------------- | --------------- |
@@ -198,5 +244,5 @@ Repeats until all tasks are done.
 - filter, map, any, all, sum
 
 ---
-##  Topic-9 :: exception
+## Exception
 - traceback

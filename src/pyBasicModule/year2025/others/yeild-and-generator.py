@@ -44,13 +44,14 @@ for val in generator1():
 # ============== Section-4 : Async generator (async for)
 import asyncio
 
+# Async generator
 async def async_count_up_to(n):
     for i in range(n):
-        await asyncio.sleep(1)
+        await asyncio.sleep(1) # 👈
         yield i
 
 async def main():
-    async for num in async_count_up_to(3):
+    async for num in async_count_up_to(3): # "async for", for "Async generator"
         print(num)
 
 asyncio.run(main())
